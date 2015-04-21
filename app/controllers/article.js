@@ -44,7 +44,7 @@ router.get('/:id', function (req, res, next){
 });
 
 // GET - edit form
-router.get('/:id/edit', function(err, article){
+router.get('/:id/edit', function(req, res, next){
 
     var id = req.params.id;
 

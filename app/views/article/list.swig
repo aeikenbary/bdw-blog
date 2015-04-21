@@ -4,14 +4,17 @@
 
 
 {% block content %}
-  <h1>{{ title }}</h1>
-  <p>Welcome to {{ title }}</p>
-
-	
+  	{% if articles.length > 0 %}
+	<ol>
 	{% for article in articles %}
-		<a target="_blank" href="{{ article.url }}">
-		<h2>{{ article.title }}</h2>
-		</a>
+	<li class="article">
+		<a href="/article/{{ article.id }}"><h2>{{ article.title }}</h2></a>
+		<p>{{ article.description }}</p>
+	</li>
 	{% endfor %}
+	</ol>
+	{% else %}
+		<h2>Nothing here yet.</h2>
+	{% endif %}
 
 {% endblock %}
